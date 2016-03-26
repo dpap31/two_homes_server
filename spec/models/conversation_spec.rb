@@ -38,4 +38,14 @@ RSpec.describe Conversation do
       expect(Conversation.between(recipient.id, recipient.id).present?).to eq(false)
     end
   end
+
+  context 'conversation code generation' do
+    let(:code) { FactoryGirl.create(:conversation).generate_code }
+    it 'should have 7 characters' do
+      expect(code.length).to eq(7)
+    end
+    it 'should have a dash as the 4th character' do
+      expect(code[3]).to eq('-')
+    end
+  end
 end

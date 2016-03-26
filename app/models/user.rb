@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   validates :persona, presence: true
 
   has_secure_password
+
+  enum persona: [:user, :moderator]
 end
