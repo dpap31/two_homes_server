@@ -6,6 +6,10 @@ RSpec.describe User do
     it { is_expected.to validate_presence_of required_attr }
   end
 
+  it 'expects to have password' do
+    is_expected.to validate_presence_of('password')
+  end
+
   it 'validates uniqueness of email attribute' do
     original = FactoryGirl.create(:user)
     dup = FactoryGirl.build(:user, email: original.email)

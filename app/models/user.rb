@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  enum persona: [:user, :moderator]
+  #enum persona: [:user, :moderator]
 end
