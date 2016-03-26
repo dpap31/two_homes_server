@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+development:
+  <<: *default
+  database: two_homes_server_development
+  host: localhost
+test:
+  <<: *default
+  database: two_homes_server_test
+  host: localhost
+production:
+  url: <%= ENV['DATABASE_URL'] %>
