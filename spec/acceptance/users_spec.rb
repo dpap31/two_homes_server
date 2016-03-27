@@ -13,13 +13,13 @@ RSpec.resource 'Users' do
     parameter 'last-name', <<-DESC, scope: :attributes, required: true
       The surname of the user.
     DESC
-    parameter 'email', <<-DESC, scope: :attributes
+    parameter 'email', <<-DESC, scope: :attributes, required: true
       The email address of the user.
     DESC
-    parameter 'password', <<-DESC, scope: :attributes
+    parameter 'password', <<-DESC, scope: :attributes, required: true
       The password for the user.
     DESC
-    parameter 'persona', <<-DESC, scope: :attributes
+    parameter 'persona', <<-DESC, scope: :attributes, required: true
       The users persona.
     DESC
   end
@@ -29,7 +29,7 @@ RSpec.resource 'Users' do
     let('email') { 'test@test.com' }
     let('first-name') { 'Drew' }
     let('last-name') { 'Pappas' }
-    let('persona') { 1 }
+    let('persona') { 0 }
     let('password') { 'password' }
 
     example_request 'POST /v1/users' do

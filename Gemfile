@@ -15,11 +15,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4.2'
   gem 'factory_girl_rails'
   gem 'byebug'
+  gem 'rspec_api_documentation'
+  gem 'apitome'
 end
 
 
 group :test do
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'rspec_api_documentation'
-  gem 'apitome'
 end
