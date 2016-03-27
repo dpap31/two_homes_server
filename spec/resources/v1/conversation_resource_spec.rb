@@ -1,12 +1,12 @@
 module V1
-  RSpec.describe UserResource do
+  RSpec.describe ConversationResource do
 
     let :creatable_fields do
-      [:id, :email, :first_name, :last_name, :persona, :password].sort
+      [:id, :code, :password].sort
     end
 
     subject do
-      described_class.new(User.new, {})
+      described_class.new(Conversation.new, {})
     end
 
     it 'has the expected creatable_attributes' do
@@ -18,7 +18,7 @@ module V1
     end
 
     it "has the expected fetchable attributes" do
-      expect(subject.fetchable_fields.sort).to eq ((creatable_fields + [:created_at, :updated_at, :conversations, :user_conversations] - [:password]).sort)
+      expect(subject.fetchable_fields.sort).to eq ((creatable_fields + [:created_at, :updated_at, :user_conversations, :users] - [:password]).sort)
     end
   end
 end
