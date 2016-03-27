@@ -1,10 +1,15 @@
 {
   "resource": "Users",
-  "http_method": "POST",
-  "route": "/v1/users",
-  "description": "POST /v1/users",
+  "http_method": "PATCH",
+  "route": "/v1/users/:user_id",
+  "description": "PATCH /v1/users/:user_id",
   "explanation": null,
   "parameters": [
+    {
+      "required": true,
+      "name": "id",
+      "description": "      The users ID.\n"
+    },
     {
       "required": true,
       "name": "type",
@@ -46,18 +51,18 @@
   ],
   "requests": [
     {
-      "request_method": "POST",
-      "request_path": "/v1/users",
-      "request_body": "{\"data\":{\"type\":\"users\",\"attributes\":{\"first-name\":\"Drew\",\"last-name\":\"Pappas\",\"email\":\"test@test.com\",\"password\":\"password\",\"persona\":0}}}",
+      "request_method": "PATCH",
+      "request_path": "/v1/users/5",
+      "request_body": "{\"data\":{\"id\":\"5\",\"type\":\"users\",\"attributes\":{\"first-name\":\"Leonidas\"}}}",
       "request_headers": {
         "Content-Type": "application/vnd.api+json"
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/vnd.api+json",
-      "response_status": 201,
-      "response_status_text": "Created",
-      "response_body": "{\"data\":{\"id\":\"4\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/4\"},\"attributes\":{\"email\":\"test@test.com\",\"first-name\":\"Drew\",\"last-name\":\"Pappas\",\"persona\":\"user\"}}}",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"data\":{\"id\":\"5\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/5\"},\"attributes\":{\"email\":\"test-4@twohomes.com\",\"first-name\":\"Leonidas\",\"last-name\":\"Pappas\",\"persona\":\"moderator\"}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },

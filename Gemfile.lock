@@ -45,6 +45,7 @@ GEM
     builder (3.2.2)
     byebug (8.2.2)
     concurrent-ruby (1.0.1)
+    database_cleaner (1.5.1)
     diff-lcs (1.2.5)
     doorkeeper (3.1.0)
       railties (>= 3.2)
@@ -152,6 +153,7 @@ DEPENDENCIES
   apitome
   bcrypt (~> 3.1.7)
   byebug
+  database_cleaner
   doorkeeper
   factory_girl_rails
   jsonapi-resources

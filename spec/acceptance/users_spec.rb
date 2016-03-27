@@ -38,6 +38,38 @@ RSpec.resource 'Users' do
       expect(user['data']['attributes']['email']).to eq send('email')
     end
   end
-end
 
+  get "/v1/users/:user_id" do
+    let!(:persisted_user) { FactoryGirl.create(:user) }
+    let(:user_id){ persisted_user.id.to_s }
+    example_request 'PATCH /v1/users/:user_id' do
+      expect(status).to eq 200
+    end
+  end
+
+  patch "/v1/users/:user_id" do
+    parameter 'id', <<-DESC, required: true
+      The users ID.
+    DESC
+    let!(:persisted_user) { FactoryGirl.create(:user) }
+    let('user_id') { persisted_user.id.to_s }
+    let('id') { persisted_user.id.to_s }
+    include_context 'user parameters'
+    let('first-name') { 'Leonidas' }
+    example_request 'PATCH /v1/users/:user_id' do
+      expect(status).to eq 200
+      user = JSON.parse(response_body)
+      expect(user['data']['attributes']['first-name']).to eq('Leonidas')
+    end
+  end
+
+  get "/v1/users" do
+    before { FactoryGirl.create_list(:user, 2) }
+    example_request 'GET /v1/users' do
+      expect(status).to eq 200
+      users = JSON.parse(response_body)
+      expect(users['data'].size).to eq(2)
+    end
+  end
+end
 

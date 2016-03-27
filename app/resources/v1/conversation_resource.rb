@@ -1,12 +1,9 @@
 module V1
-  class UserResource < BaseResource
+  class ConversationResource < BaseResource
     has_many :user_conversations
-    has_many :conversations
+    has_many :users
 
-    attribute :email
-    attribute :first_name
-    attribute :last_name
-    attribute :persona
+    attribute :code
     attribute :password
 
     class << self

@@ -4,11 +4,32 @@
       "name": "Users",
       "examples": [
         {
+          "description": "get /v1/users",
+          "link": "users/get_v1users.json",
+          "groups": "all",
+          "route": "/v1/users",
+          "method": "get"
+        },
+        {
+          "description": "PATCH /v1/users/:user_id",
+          "link": "users/patch_v1users:user_id.json",
+          "groups": "all",
+          "route": "/v1/users/:user_id",
+          "method": "get"
+        },
+        {
           "description": "POST /v1/users",
           "link": "users/post_v1users.json",
           "groups": "all",
           "route": "/v1/users",
           "method": "post"
+        },
+        {
+          "description": "PATCH /v1/users/:user_id",
+          "link": "users/patch_v1users:user_id.json",
+          "groups": "all",
+          "route": "/v1/users/:user_id",
+          "method": "patch"
         }
       ]
     }
