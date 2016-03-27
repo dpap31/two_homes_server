@@ -57,7 +57,7 @@
       "request_content_type": "application/vnd.api+json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\"data\":{\"id\":\"3\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/3\"},\"attributes\":{\"email\":\"test@test.com\",\"first-name\":\"Drew\",\"last-name\":\"Pappas\",\"persona\":\"user\"},\"relationships\":{\"user-conversations\":{\"links\":{\"self\":\"http://example.org/v1/users/3/relationships/user-conversations\",\"related\":\"http://example.org/v1/users/3/user-conversations\"}},\"conversations\":{\"links\":{\"self\":\"http://example.org/v1/users/3/relationships/conversations\",\"related\":\"http://example.org/v1/users/3/conversations\"}}}}}",
+      "response_body": "{\"data\":{\"id\":\"5\",\"type\":\"users\",\"links\":{\"self\":\"http://example.org/v1/users/5\"},\"attributes\":{\"email\":\"test@test.com\",\"first-name\":\"Drew\",\"last-name\":\"Pappas\",\"persona\":\"user\"},\"relationships\":{\"user-conversations\":{\"links\":{\"self\":\"http://example.org/v1/users/5/relationships/user-conversations\",\"related\":\"http://example.org/v1/users/5/user-conversations\"}},\"conversations\":{\"links\":{\"self\":\"http://example.org/v1/users/5/relationships/conversations\",\"related\":\"http://example.org/v1/users/5/conversations\"}}}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },

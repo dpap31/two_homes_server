@@ -1,15 +1,20 @@
 {
   "resources": [
     {
-      "name": "Conversations",
+      "name": "UserConversations",
       "examples": [
         {
-          "description": "DELETE /v1/conversations/:conversation_id",
-          "link": "conversations/delete_v1conversations:conversation_id.json",
+          "description": "POST /v1/user-conversations",
+          "link": "userconversations/post_v1user-conversations.json",
           "groups": "all",
-          "route": "/v1/conversations/:conversation_id",
-          "method": "delete"
-        },
+          "route": "/v1/user-conversations",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Conversations",
+      "examples": [
         {
           "description": "GET /v1/conversations",
           "link": "conversations/get_v1conversations.json",
@@ -22,7 +27,21 @@
           "link": "conversations/patch_v1conversations:conversation_id.json",
           "groups": "all",
           "route": "/v1/conversations/:conversation_id",
+          "method": "patch"
+        },
+        {
+          "description": "PATCH /v1/conversations/:conversation_id",
+          "link": "conversations/patch_v1conversations:conversation_id.json",
+          "groups": "all",
+          "route": "/v1/conversations/:conversation_id",
           "method": "get"
+        },
+        {
+          "description": "DELETE /v1/conversations/:conversation_id",
+          "link": "conversations/delete_v1conversations:conversation_id.json",
+          "groups": "all",
+          "route": "/v1/conversations/:conversation_id",
+          "method": "delete"
         },
         {
           "description": "POST /v1/conversations",
@@ -30,13 +49,6 @@
           "groups": "all",
           "route": "/v1/conversations",
           "method": "post"
-        },
-        {
-          "description": "PATCH /v1/conversations/:conversation_id",
-          "link": "conversations/patch_v1conversations:conversation_id.json",
-          "groups": "all",
-          "route": "/v1/conversations/:conversation_id",
-          "method": "patch"
         }
       ]
     },
@@ -51,6 +63,13 @@
           "method": "get"
         },
         {
+          "description": "PATCH /v1/users/:user_id",
+          "link": "users/patch_v1users:user_id.json",
+          "groups": "all",
+          "route": "/v1/users/:user_id",
+          "method": "patch"
+        },
+        {
           "description": "POST /v1/users",
           "link": "users/post_v1users.json",
           "groups": "all",
@@ -58,11 +77,11 @@
           "method": "post"
         },
         {
-          "description": "PATCH /v1/users/:user_id",
-          "link": "users/patch_v1users:user_id.json",
+          "description": "GET /v1/users/me",
+          "link": "users/get_v1usersme.json",
           "groups": "all",
-          "route": "/v1/users/:user_id",
-          "method": "patch"
+          "route": "v1/users/me",
+          "method": "get"
         },
         {
           "description": "PATCH /v1/users/:user_id",

@@ -71,5 +71,19 @@ RSpec.resource 'Users' do
       expect(users['data'].size).to eq(2)
     end
   end
+
+  get "v1/users/me" do
+    let!(:persisted_user) { FactoryGirl.create(:user, password: '12536475') }
+    let(:access_token  ) { Doorkeeper::AccessToken.create!(resource_owner_id: persisted_user.id) }
+    before do
+      header "Authorization", "Bearer #{access_token.token}"
+    end
+
+    example_request 'GET /v1/users/me' do
+      explanation "The special 'me' id for the users resource will return the currently authenticated user."
+      expect(status).to eq(200)
+      expect(JSON.parse(response_body)['data']['attributes']['email']).to eq(persisted_user.email)
+    end
+  end
 end
 
