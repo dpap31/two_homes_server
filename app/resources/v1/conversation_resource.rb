@@ -6,6 +6,12 @@ module V1
     attribute :code
     attribute :password
 
+    after_create :add_current_user_to_conversation
+
+    def add_current_user_to_conversation
+      @model.users << context[:current_user]
+    end
+
     class << self
       def creatable_fields(context)
         super - [:user_conversations, :users]

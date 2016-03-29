@@ -1,5 +1,9 @@
 class ApplicationController < JSONAPI::ResourceController
 
+  def context
+    { current_user: current_user }
+  end
+
   def current_user
     @current_user ||= current_resource_owner
   end

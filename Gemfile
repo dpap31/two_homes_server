@@ -5,6 +5,7 @@ gem 'pg', '~> 0.15'
 gem 'bcrypt', '~> 3.1.7'
 gem 'doorkeeper'
 gem 'jsonapi-resources'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development do
   gem 'spring'

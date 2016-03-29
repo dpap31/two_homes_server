@@ -25,11 +25,18 @@ RSpec.resource 'Conversations' do
     include_context 'conversation parameters'
     let('code') { '123-456' }
     let('password') { 'p@ssw0rd' }
+    before do
+      @current_user = FactoryGirl.create(:user)
+      access_token = Doorkeeper::AccessToken.create!(resource_owner_id: @current_user.id).token
+      header "Authorization", "Bearer #{access_token}"
+    end
 
     example_request 'POST /v1/conversations' do
       expect(status).to eq 201
-      conversation = JSON.parse(response_body)
-      expect(conversation['data']['attributes']['code']).to eq send('code')
+      conversation = Conversation.find(JSON.parse(response_body)['data']['id'])
+      expect(conversation.code).to eq send('code')
+      expect(conversation.users.count).to eq(1)
+      expect(conversation.users.first.id).to eq(@current_user.id)
     end
   end
 
