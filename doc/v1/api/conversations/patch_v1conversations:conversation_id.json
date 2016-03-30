@@ -13,7 +13,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/v1/conversations/5",
+      "request_path": "/v1/conversations/6",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/vnd.api+json"
@@ -23,7 +23,7 @@
       "request_content_type": "application/vnd.api+json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\"data\":{\"id\":\"5\",\"type\":\"conversations\",\"links\":{\"self\":\"http://example.org/v1/conversations/5\"},\"attributes\":{\"code\":\"123-325\"},\"relationships\":{\"user-conversations\":{\"links\":{\"self\":\"http://example.org/v1/conversations/5/relationships/user-conversations\",\"related\":\"http://example.org/v1/conversations/5/user-conversations\"}},\"users\":{\"links\":{\"self\":\"http://example.org/v1/conversations/5/relationships/users\",\"related\":\"http://example.org/v1/conversations/5/users\"}}}}}",
+      "response_body": "{\"data\":{\"id\":\"6\",\"type\":\"conversations\",\"links\":{\"self\":\"http://example.org/v1/conversations/6\"},\"attributes\":{\"code\":\"123-325\"},\"relationships\":{\"user-conversations\":{\"links\":{\"self\":\"http://example.org/v1/conversations/6/relationships/user-conversations\",\"related\":\"http://example.org/v1/conversations/6/user-conversations\"}},\"users\":{\"links\":{\"self\":\"http://example.org/v1/conversations/6/relationships/users\",\"related\":\"http://example.org/v1/conversations/6/users\"}}}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },

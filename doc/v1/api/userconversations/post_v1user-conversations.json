@@ -30,7 +30,7 @@
     {
       "request_method": "POST",
       "request_path": "/v1/user-conversations",
-      "request_body": "{\"data\":{\"type\":\"user-conversations\",\"relationships\":{\"user\":{\"data\":{\"type\":\"users\",\"id\":\"1\"}},\"conversation\":{\"data\":{\"type\":\"conversations\",\"id\":\"1\"}}}}}",
+      "request_body": "{\"data\":{\"type\":\"user-conversations\",\"relationships\":{\"user\":{\"data\":{\"type\":\"users\",\"id\":\"8\"}},\"conversation\":{\"data\":{\"type\":\"conversations\",\"id\":\"7\"}}}}}",
       "request_headers": {
         "Content-Type": "application/vnd.api+json"
       },
@@ -39,7 +39,7 @@
       "request_content_type": "application/vnd.api+json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\"data\":{\"id\":\"1\",\"type\":\"user-conversations\",\"links\":{\"self\":\"http://example.org/v1/user-conversations/1\"},\"relationships\":{\"user\":{\"links\":{\"self\":\"http://example.org/v1/user-conversations/1/relationships/user\",\"related\":\"http://example.org/v1/user-conversations/1/user\"},\"data\":{\"type\":\"users\",\"id\":\"1\"}},\"conversation\":{\"links\":{\"self\":\"http://example.org/v1/user-conversations/1/relationships/conversation\",\"related\":\"http://example.org/v1/user-conversations/1/conversation\"},\"data\":{\"type\":\"conversations\",\"id\":\"1\"}}}}}",
+      "response_body": "{\"data\":{\"id\":\"2\",\"type\":\"user-conversations\",\"links\":{\"self\":\"http://example.org/v1/user-conversations/2\"},\"relationships\":{\"user\":{\"links\":{\"self\":\"http://example.org/v1/user-conversations/2/relationships/user\",\"related\":\"http://example.org/v1/user-conversations/2/user\"},\"data\":{\"type\":\"users\",\"id\":\"8\"}},\"conversation\":{\"links\":{\"self\":\"http://example.org/v1/user-conversations/2/relationships/conversation\",\"related\":\"http://example.org/v1/user-conversations/2/conversation\"},\"data\":{\"type\":\"conversations\",\"id\":\"7\"}}}}}",
       "response_headers": {
         "Content-Type": "application/vnd.api+json"
       },
