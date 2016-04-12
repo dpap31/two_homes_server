@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 20160327041258) do
     t.string   "email",           null: false
     t.string   "first_name",      null: false
     t.string   "last_name",       null: false
-    t.string   "initials"
     t.integer  "persona",         null: false
     t.string   "password_digest", null: false
     t.datetime "created_at",      null: false

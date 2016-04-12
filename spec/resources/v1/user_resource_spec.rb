@@ -18,7 +18,8 @@ module V1
     end
 
     it "has the expected fetchable attributes" do
-      expect(subject.fetchable_fields.sort).to eq ((creatable_fields + [:created_at, :updated_at, :conversations, :user_conversations] - [:password]).sort)
+      fetachable_attrs = [:created_at, :updated_at, :conversations, :user_conversations, :full_name, :initials]
+      expect(subject.fetchable_fields.sort).to eq ((creatable_fields + fetachable_attrs - [:password]).sort)
     end
   end
 end

@@ -13,7 +13,7 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "/v1/conversations/6",
+      "request_path": "/v1/conversations/3",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/vnd.api+json"
