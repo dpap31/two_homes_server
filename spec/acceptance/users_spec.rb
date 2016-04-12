@@ -13,6 +13,12 @@ RSpec.resource 'Users' do
     parameter 'last-name', <<-DESC, scope: :attributes, required: true
       The surname of the user.
     DESC
+    parameter 'full-name', <<-DESC, scope: :attributes, required: true
+      The full name of the user.
+    DESC
+    parameter 'initials', <<-DESC, scope: :attributes
+      The initials of the user.
+    DESC
     parameter 'email', <<-DESC, scope: :attributes, required: true
       The email address of the user.
     DESC

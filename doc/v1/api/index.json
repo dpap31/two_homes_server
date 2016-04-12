@@ -1,0 +1,96 @@
+{
+  "resources": [
+    {
+      "name": "Conversations",
+      "examples": [
+        {
+          "description": "POST /v1/conversations",
+          "link": "conversations/post_v1conversations.json",
+          "groups": "all",
+          "route": "/v1/conversations",
+          "method": "post"
+        },
+        {
+          "description": "PATCH /v1/conversations/:conversation_id",
+          "link": "conversations/patch_v1conversations:conversation_id.json",
+          "groups": "all",
+          "route": "/v1/conversations/:conversation_id",
+          "method": "patch"
+        },
+        {
+          "description": "PATCH /v1/conversations/:conversation_id",
+          "link": "conversations/patch_v1conversations:conversation_id.json",
+          "groups": "all",
+          "route": "/v1/conversations/:conversation_id",
+          "method": "get"
+        },
+        {
+          "description": "GET /v1/conversations",
+          "link": "conversations/get_v1conversations.json",
+          "groups": "all",
+          "route": "/v1/conversations",
+          "method": "get"
+        },
+        {
+          "description": "DELETE /v1/conversations/:conversation_id",
+          "link": "conversations/delete_v1conversations:conversation_id.json",
+          "groups": "all",
+          "route": "/v1/conversations/:conversation_id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "UserConversations",
+      "examples": [
+        {
+          "description": "POST /v1/user-conversations",
+          "link": "userconversations/post_v1user-conversations.json",
+          "groups": "all",
+          "route": "/v1/user-conversations",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "examples": [
+        {
+          "description": "GET /v1/users",
+          "link": "users/get_v1users.json",
+          "groups": "all",
+          "route": "/v1/users",
+          "method": "get"
+        },
+        {
+          "description": "GET /v1/users/me",
+          "link": "users/get_v1usersme.json",
+          "groups": "all",
+          "route": "v1/users/me",
+          "method": "get"
+        },
+        {
+          "description": "POST /v1/users",
+          "link": "users/post_v1users.json",
+          "groups": "all",
+          "route": "/v1/users",
+          "method": "post"
+        },
+        {
+          "description": "PATCH /v1/users/:user_id",
+          "link": "users/patch_v1users:user_id.json",
+          "groups": "all",
+          "route": "/v1/users/:user_id",
+          "method": "patch"
+        },
+        {
+          "description": "PATCH /v1/users/:user_id",
+          "link": "users/patch_v1users:user_id.json",
+          "groups": "all",
+          "route": "/v1/users/:user_id",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

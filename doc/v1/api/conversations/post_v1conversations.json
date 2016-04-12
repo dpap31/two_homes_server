@@ -1,0 +1,50 @@
+{
+  "resource": "Conversations",
+  "http_method": "POST",
+  "route": "/v1/conversations",
+  "description": "POST /v1/conversations",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "type",
+      "description": "      The type of the resource. Must be conversation.\n"
+    },
+    {
+      "scope": "attributes",
+      "required": true,
+      "name": "code",
+      "description": "      The user facing conversation code.\n"
+    },
+    {
+      "scope": "attributes",
+      "required": true,
+      "name": "password",
+      "description": "      The password for the conversation.\n"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/v1/conversations",
+      "request_body": "{\"data\":{\"type\":\"conversations\",\"attributes\":{\"code\":\"123-456\",\"password\":\"p@ssw0rd\"}}}",
+      "request_headers": {
+        "Content-Type": "application/vnd.api+json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/vnd.api+json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\"data\":{\"id\":\"1\",\"type\":\"conversations\",\"links\":{\"self\":\"http://example.org/v1/conversations/1\"},\"attributes\":{\"code\":\"123-456\"},\"relationships\":{\"user-conversations\":{\"links\":{\"self\":\"http://example.org/v1/conversations/1/relationships/user-conversations\",\"related\":\"http://example.org/v1/conversations/1/user-conversations\"}},\"users\":{\"links\":{\"self\":\"http://example.org/v1/conversations/1/relationships/users\",\"related\":\"http://example.org/v1/conversations/1/users\"}}}}}",
+      "response_headers": {
+        "Content-Type": "application/vnd.api+json"
+      },
+      "response_content_type": "application/vnd.api+json",
+      "curl": null
+    }
+  ]
+}
