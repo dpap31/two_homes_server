@@ -2,7 +2,7 @@ module V1
   RSpec.describe UserResource do
 
     let :creatable_fields do
-      [:id, :email, :first_name, :last_name, :persona, :password].sort
+      [:id, :email, :first_name, :last_name, :persona, :password, :conversations ].sort
     end
 
     subject do
@@ -18,7 +18,7 @@ module V1
     end
 
     it "has the expected fetchable attributes" do
-      fetachable_attrs = [:created_at, :updated_at, :conversations, :user_conversations, :full_name, :initials]
+      fetachable_attrs = [:created_at, :updated_at, :user_conversations, :full_name, :initials]
       expect(subject.fetchable_fields.sort).to eq ((creatable_fields + fetachable_attrs - [:password]).sort)
     end
   end

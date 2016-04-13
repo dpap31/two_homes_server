@@ -17,7 +17,7 @@ module V1
 
     class << self
       def creatable_fields(context)
-        super - [:conversations, :user_conversations, :initials, :full_name]
+        super - [:user_conversations, :initials, :full_name]
       end
       alias_method :updatable_fields, :creatable_fields
     end

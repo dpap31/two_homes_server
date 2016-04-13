@@ -74,6 +74,18 @@ RSpec.resource 'Conversations' do
     end
   end
 
+  get "/v1/conversations?filter[password]" do
+    before do 
+      FactoryGirl.create_list(:conversation, 2)
+      FactoryGirl.create(:conversation, { code: '123-456', password: 'P@ssw0rd'})
+    end
+    example_request 'GET /v1/conversations?filter[code]=123-456' do
+      puts Conversation.all.count
+      expect(status).to eq 200
+      puts response_body
+    end
+  end
+
   delete "/v1/conversations/:conversation_id" do
     include_context "with a persisted conversation"
     example_request "DELETE /v1/conversations/:conversation_id" do

@@ -6,6 +6,8 @@ module V1
     attribute :code
     attribute :password
 
+    filters :code, :password
+
     after_create :add_current_user_to_conversation
 
     def add_current_user_to_conversation
