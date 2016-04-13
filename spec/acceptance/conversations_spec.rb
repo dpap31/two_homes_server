@@ -80,9 +80,7 @@ RSpec.resource 'Conversations' do
       FactoryGirl.create(:conversation, { code: '123-456', password: 'P@ssw0rd'})
     end
     example_request 'GET /v1/conversations?filter[code]=123-456' do
-      puts Conversation.all.count
       expect(status).to eq 200
-      puts response_body
     end
   end
 
