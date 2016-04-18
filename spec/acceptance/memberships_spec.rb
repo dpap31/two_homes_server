@@ -33,7 +33,7 @@ RSpec.resource 'Memberships' do
     let "parenting-group" do
       {
         data: {
-          type: "parenting-group",
+          type: "parenting-groups",
           id: parenting_group_model.id.to_s
         }
       }

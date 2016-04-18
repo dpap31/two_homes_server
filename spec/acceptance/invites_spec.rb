@@ -6,7 +6,7 @@ RSpec.resource 'Invites' do
     parameter 'type', <<-DESC, required: true
       The type of the resource. Must be invite.
     DESC
-    let ('type'){'invite'}
+    let ('type'){'invites'}
     parameter 'email', <<-DESC, scope: :attributes, required: true
       The email of the person being invited.
     DESC
@@ -24,10 +24,17 @@ RSpec.resource 'Invites' do
     let('accepted') { false }
     let('token') { 'abc123' }
 
+    before do
+      @current_user = FactoryGirl.create(:user)
+      access_token = Doorkeeper::AccessToken.create!(resource_owner_id: @current_user.id).token
+      header "Authorization", "Bearer #{access_token}"
+    end
+
     example_request 'POST /v1/invites' do
-      expect(status).to eq 201
       invite = JSON.parse(response_body)
       expect(invite['data']['attributes']['email']).to eq send('email')
+      invite = Invite.find(JSON.parse(response_body)['data']['id'])
+      expect(invite.sender.id).to eq(@current_user.id)
     end
   end
 
