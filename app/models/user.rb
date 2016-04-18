@@ -2,6 +2,12 @@ class User < ActiveRecord::Base
   has_many :user_conversations
   has_many :conversations, through: :user_conversations
 
+  has_many :memberships
+  has_many :parenting_groups, through: :memberships
+  has_many :invitations, class_name:'Invite', foreign_key: 'recipient_id'
+  has_many :sent_invites, class_name: 'Invite', foreign_key: 'sender_id'
+
+
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
