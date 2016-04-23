@@ -3,6 +3,7 @@ module V1
     has_many :memberships
     has_many :users
     has_many :invites
+    has_many :conversations
 
     after_create :add_current_user_to_parenting_group
 
