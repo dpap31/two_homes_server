@@ -8,11 +8,8 @@ RSpec.resource 'Conversations' do
       The type of the resource. Must be conversation.
     DESC
     let ('type'){'conversations'}
-    parameter 'code', <<-DESC, scope: :attributes, required: true
-      The user facing conversation code.
-    DESC
-    parameter 'password', <<-DESC, scope: :attributes, required: true
-      The password for the conversation.
+    parameter 'name', <<-DESC, scope: :attributes, required: true
+      The user facing conversation name.
     DESC
   end
 
@@ -23,8 +20,7 @@ RSpec.resource 'Conversations' do
 
   post '/v1/conversations' do
     include_context 'conversation parameters'
-    let('code') { '123-456' }
-    let('password') { 'p@ssw0rd' }
+    let('name') { 'fake conve' }
     before do
       @current_user = FactoryGirl.create(:user)
       access_token = Doorkeeper::AccessToken.create!(resource_owner_id: @current_user.id).token
@@ -34,7 +30,7 @@ RSpec.resource 'Conversations' do
     example_request 'POST /v1/conversations' do
       expect(status).to eq 201
       conversation = Conversation.find(JSON.parse(response_body)['data']['id'])
-      expect(conversation.code).to eq send('code')
+      expect(conversation.name).to eq send('name')
       expect(conversation.users.count).to eq(1)
       expect(conversation.users.first.id).to eq(@current_user.id)
     end
@@ -57,11 +53,11 @@ RSpec.resource 'Conversations' do
     let('conversation_id') { persisted_conversation.id.to_s }
     let('id') { persisted_conversation.id.to_s }
     include_context 'conversation parameters'
-    let('code') { '369-042' }
+    let('name') { 'fake convo name' }
     example_request 'PATCH /v1/conversations/:conversation_id' do
       expect(status).to eq 200
       conversation = JSON.parse(response_body)
-      expect(conversation['data']['attributes']['code']).to eq('369-042')
+      expect(conversation['data']['attributes']['name']).to eq('fake convo name')
     end
   end
 
@@ -74,12 +70,12 @@ RSpec.resource 'Conversations' do
     end
   end
 
-  get "/v1/conversations?filter[password]" do
-    before do 
+  get "/v1/conversations?filter[name]=foo" do
+    before do
       FactoryGirl.create_list(:conversation, 2)
-      FactoryGirl.create(:conversation, { code: '123-456', password: 'P@ssw0rd'})
+      FactoryGirl.create(:conversation, { name: 'foo' } )
     end
-    example_request 'GET /v1/conversations?filter[code]=123-456' do
+    example_request 'GET /v1/conversations?filter[name]=foo' do
       expect(status).to eq 200
     end
   end

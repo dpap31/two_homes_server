@@ -6,6 +6,7 @@ RSpec.describe ParentingGroup, type: :model do
      it { is_expected.to have_many(:invites) }
      it { is_expected.to have_many(:users).through(:memberships) }
      it { is_expected.to have_many(:invites) }
+     it { is_expected.to have_many(:conversations) }
    end
 
   context 'Factory is valid' do

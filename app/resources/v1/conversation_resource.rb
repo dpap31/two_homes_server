@@ -2,11 +2,11 @@ module V1
   class ConversationResource < BaseResource
     has_many :user_conversations
     has_many :users
+    has_one :parenting_group
 
-    attribute :code
-    attribute :password
+    attribute :name
 
-    filters :code, :password
+    filters :name
 
     after_create :add_current_user_to_conversation
 

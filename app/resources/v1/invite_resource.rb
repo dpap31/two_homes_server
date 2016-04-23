@@ -7,6 +7,8 @@ class V1::InviteResource < JSONAPI::Resource
   attribute :accepted
   attribute :token
 
+  filter :token
+
   after_create :add_current_user_to_invite
 
   def add_current_user_to_invite

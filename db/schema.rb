@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20160418013657) do
   enable_extension "plpgsql"
 
   create_table "conversations", force: :cascade do |t|
-    t.string   "code"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "parenting_group_id"
+    t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "invites", force: :cascade do |t|
