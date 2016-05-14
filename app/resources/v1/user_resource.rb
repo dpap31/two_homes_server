@@ -15,6 +15,8 @@ module V1
     attribute :initials
     attribute :full_name
 
+    filter :first_name
+
     def full_name
       "#{@model.first_name} #{@model.last_name}"
     end
