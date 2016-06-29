@@ -7,6 +7,9 @@ RSpec.resource 'ParentingGroups' do
     parameter 'type', <<-DESC, required: true
       The type of the resource. Must be parenting-groups.
     DESC
+    parameter 'name', <<-DESC, scope: :attributes
+      The name of the Parenting Group.
+    DESC
     let ('type'){'parenting-groups'}
   end
 

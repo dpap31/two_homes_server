@@ -5,6 +5,10 @@ module V1
     has_many :invites
     has_many :conversations
 
+    attribute :created_at
+    attribute :updated_at
+    attribute :name
+
     after_create :add_current_user_to_parenting_group
 
     def add_current_user_to_parenting_group
