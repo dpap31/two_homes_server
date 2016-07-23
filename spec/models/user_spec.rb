@@ -5,6 +5,10 @@ RSpec.describe User do
   context 'relationships' do
     it { is_expected.to have_many(:user_conversations) }
     it { is_expected.to have_many(:conversations).through(:user_conversations) }
+    it { is_expected.to have_many(:memberships) }
+    it { is_expected.to have_many(:parenting_groups).through(:memberships) }
+    it { is_expected.to have_many(:invitations) }
+    it { is_expected.to have_many(:sent_invites) }
   end
 
   context 'validations' do
@@ -47,7 +51,7 @@ RSpec.describe User do
 
   context 'parse_initials_from_name' do
 
-    it 'parses and upcases initials' do 
+    it 'parses and upcases initials' do
       initials_1 = FactoryGirl.build(:user, first_name: 'drew', last_name: 'pappas').parse_initials_from_name
       expect(initials_1).to eq('DP')
     end
