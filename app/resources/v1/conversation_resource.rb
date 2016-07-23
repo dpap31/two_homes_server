@@ -5,8 +5,9 @@ module V1
     has_one :parenting_group
 
     attribute :name
+    attribute :parenting_group_id
 
-    filters :name
+    filters :parenting_group_id, :user_id
 
     after_create :add_current_user_to_conversation
 
